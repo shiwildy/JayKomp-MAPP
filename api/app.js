@@ -274,6 +274,60 @@ app.post('/update-password', async (req, res) => {
     });
 });
 
+app.get('/getnewproduct', (req, res) => {
+    const query = 'SELECT * FROM barangs ORDER BY id DESC LIMIT 10';
+    
+    db.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
+
+        return res.status(200).json(results);
+    });
+});
+
+app.get('/searchproduct', (req, res) => {
+    const { keyword } = req.query;
+
+    console.log('Keyword received:', keyword);
+
+    if (!keyword) {
+        return res.status(400).json({ error: 'Keyword is required' });
+    }
+
+    const cleanedKeyword = keyword.trim();
+    const cleankeyword = cleanedKeyword.replace(/['"]/g, '').trim();
+    const query = `
+        SELECT * FROM barangs 
+        WHERE nama LIKE '%${cleankeyword}%' 
+        OR deskripsi LIKE '%${cleankeyword}%'
+    `;
+
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Database error:', err); // Debug log
+            return res.status(500).json({ error: 'Database error' });
+        }
+
+        return res.status(200).json(results);
+    });
+});
+
+app.get('/get4', (req, res) => {
+    const query = 'SELECT * FROM barangs ORDER BY RAND() LIMIT 4';
+
+    db.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
+
+        return res.status(200).json(results);
+    });
+});
+
+
+app.use('/images', express.static('images'));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
