@@ -305,7 +305,6 @@ app.get('/searchproduct', (req, res) => {
 
     db.query(query, (err, results) => {
         if (err) {
-            console.error('Database error:', err); // Debug log
             return res.status(500).json({ error: 'Database error' });
         }
 
