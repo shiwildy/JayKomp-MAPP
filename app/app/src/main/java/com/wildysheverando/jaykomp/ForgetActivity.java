@@ -1,3 +1,15 @@
+/*
+
+    JayKomp-MAPP
+    Merupakan aplikasi android yang dibuat untuk kebutuhan project akhir mata kuliah webmobile programming
+
+    Author: Wildy Sheverando <hai@shiwildy.com>
+
+    File ini merupakan bagian dari
+    https://github.com/shiwildy/JayKomp-MAPP
+
+*/
+
 package com.wildysheverando.jaykomp;
 
 import android.os.Bundle;
@@ -10,8 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import com.wildysheverando.jaykomp.api.ApiClient;
-import com.wildysheverando.jaykomp.api.ApiService;
 import java.util.HashMap;
 import java.util.Map;
 import retrofit2.Call;
@@ -28,7 +38,6 @@ public class ForgetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget);
 
-        // Inisialisasi elemen UI
         emailEditText = findViewById(R.id.email);
         submitButton = findViewById(R.id.submitbutton);
         kembaliTextview = findViewById(R.id.kembali);
@@ -46,7 +55,6 @@ public class ForgetActivity extends AppCompatActivity {
             }
         });
 
-        // Kembali ke home
         kembaliTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +85,7 @@ public class ForgetActivity extends AppCompatActivity {
                         Toast.makeText(ForgetActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(ForgetActivity.this, "Gagal mengirim permintaan reset password.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgetActivity.this, "Gagal kirim email reset password.", Toast.LENGTH_SHORT).show();
                 }
             }
 

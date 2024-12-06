@@ -23,7 +23,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".DaftarActivity"></activity>
+        <activity android:name=".DetailActivity" />
         <activity android:name=".ForgetActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".PesanActivity"></activity>
+        <activity android:name=".CartActivity"></activity>
+
+        <activity
+            android:name=".BerandaActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

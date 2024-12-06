@@ -1,3 +1,15 @@
+/*
+
+    JayKomp-MAPP
+    Merupakan aplikasi android yang dibuat untuk kebutuhan project akhir mata kuliah webmobile programming
+
+    Author: Wildy Sheverando <hai@shiwildy.com>
+
+    File ini merupakan bagian dari
+    https://github.com/shiwildy/JayKomp-MAPP
+
+*/
+
 package com.wildysheverando.jaykomp;
 
 import android.os.Bundle;
@@ -10,14 +22,11 @@ import android.widget.Toast;
 import android.widget.TextView;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import com.wildysheverando.jaykomp.api.ApiClient;
-import com.wildysheverando.jaykomp.api.ApiService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import java.util.Map;
 import java.util.HashMap;
-import android.util.Log;
 
 public class DaftarActivity extends AppCompatActivity {
     private EditText emailEditText;
@@ -30,12 +39,10 @@ public class DaftarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
 
-        // Inisialisasi elemen UI
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
         daftarButton = findViewById(R.id.daftarbutton);
         kembaliTextview = findViewById(R.id.kembali);
-
         daftarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +61,6 @@ public class DaftarActivity extends AppCompatActivity {
             }
         });
 
-        // Balik ke home
         kembaliTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

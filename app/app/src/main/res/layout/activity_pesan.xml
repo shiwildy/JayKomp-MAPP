@@ -5,50 +5,67 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".BerandaActivity">
+    tools:context=".PesanActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:padding="13dp"
-        android:gravity="center_vertical">
+        android:padding="30dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Pesan" />
 
-        <EditText
-            android:id="@+id/searchkey"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/custom_edittext"
-            android:drawablePadding="8dp"
-            android:hint="Cari laptop apa kakak?"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
-
-        <ImageButton
-            android:id="@+id/searchbutton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:background="?attr/selectableItemBackground"
-            android:src="@drawable/baseline_search_24"
-            android:contentDescription="search button"
-            android:tint="@color/black" />
-    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
 
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:padding="20dp"
         android:background="@color/white" >
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <!-- Dummy chat -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/pesan1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/message_background"
+                android:padding="8dp"
+                android:text="David Komputer:\nIya kak untuk ryzen 7 ready ya kakak langsung co saja 😍"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pesan2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/message_background"
+                android:padding="8dp"
+                android:text="JayKomp Admin:\nMaaf, kak untuk saat ini kami belum mendukung paylater ya 🙏."
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pesan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/message_background"
+                android:padding="8dp"
+                android:text="COC Komputer:\nIya kak garansi monitor badutnya 3 tahun ya, bisa langsung di order."
+                android:textSize="16sp" />
+        </LinearLayout>
     </FrameLayout>
 
     <View

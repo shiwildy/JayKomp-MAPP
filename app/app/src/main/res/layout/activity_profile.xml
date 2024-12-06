@@ -5,50 +5,59 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".BerandaActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:padding="13dp"
-        android:gravity="center_vertical">
-
-        <EditText
-            android:id="@+id/searchkey"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/custom_edittext"
-            android:drawablePadding="8dp"
-            android:hint="Cari laptop apa kakak?"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
-
-        <ImageButton
-            android:id="@+id/searchbutton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:background="?attr/selectableItemBackground"
-            android:src="@drawable/baseline_search_24"
-            android:contentDescription="search button"
-            android:tint="@color/black" />
-    </LinearLayout>
+    tools:context=".ProfileActivity">
 
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="10dp"
         android:layout_weight="1"
+        android:paddingTop="100dp"
         android:background="@color/white" >
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Pakai library hdodenhof biar profil bulet -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilimage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/profil"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wildy Sheverando"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/emailtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="shiwildy@gmail.com"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:backgroundTint="@color/design_default_color_error"
+                android:textColor="@color/white"
+                android:padding="15dp"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
     </FrameLayout>
 
     <View

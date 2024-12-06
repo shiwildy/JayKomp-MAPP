@@ -1,3 +1,15 @@
+/*
+
+    JayKomp-MAPP
+    Merupakan aplikasi android yang dibuat untuk kebutuhan project akhir mata kuliah webmobile programming
+
+    Author: Wildy Sheverando <hai@shiwildy.com>
+
+    File ini merupakan bagian dari
+    https://github.com/shiwildy/JayKomp-MAPP
+
+*/
+
 package com.wildysheverando.jaykomp;
 
 import android.os.Bundle;
@@ -10,14 +22,11 @@ import android.widget.Toast;
 import android.widget.TextView;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import com.wildysheverando.jaykomp.api.ApiClient;
-import com.wildysheverando.jaykomp.api.ApiService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import java.util.HashMap;
 import java.util.Map;
-import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private EditText emailEditText;
@@ -93,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
                     if (responseBody != null && responseBody.containsKey("message")) {
                         String message = responseBody.get("message");
                         Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                        // lempar ke beranda / dashboard
+                        Intent intent = new Intent(MainActivity.this, BerandaActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 } else {
                     Toast.makeText(MainActivity.this, "Login gagal. Cek email atau password.", Toast.LENGTH_SHORT).show();
