@@ -29,10 +29,10 @@ db.connect((err) => {
 });
 
 app.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { nama, email, password } = req.body;
 
-    if (!email || !password) {
-        return res.status(400).json({ error: 'Email and password are required' });
+    if (!nama || !email || !password) {
+        return res.status(400).json({ error: 'nama, Email, password are required' });
     }
 
     db.query('SELECT * FROM users WHERE email = ?', [email], async (err, result) => {
@@ -46,7 +46,7 @@ app.post('/register', async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        db.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword], (err) => {
+        db.query('INSERT INTO users (email, nama, password) VALUES (?, ?, ?)', [email, nama, hashedPassword], (err) => {
             if (err) {
                 return res.status(500).json({ error: 'Database error' });
             }
@@ -76,7 +76,11 @@ app.post('/login', async (req, res) => {
             return res.status(400).json({ error: 'Invalid password' });
         }
 
-        return res.status(200).json({ message: 'Login successful' });
+        // Return both message and the user's name (nama)
+        return res.status(200).json({ 
+            message: 'Login successful',
+            nama: result[0].nama
+        });
     });
 });
 

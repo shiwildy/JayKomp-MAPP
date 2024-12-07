@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# >> Load environment loader
+source /lib/envloader
+
+# >> Define application.
+export runner="node22"
+export appid="jaykompapi"
+export port="10001"
+
+# >> Load environment
+loadenv
+
+if [[ $1 == 'start' ]]; then
+    node app.js
+elif [[ $1 == 'stop' ]]; then
+    stop
+fi
