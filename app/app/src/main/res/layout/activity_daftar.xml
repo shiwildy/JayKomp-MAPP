@@ -68,6 +68,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/merah"
                 android:text="Daftar"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>
@@ -80,6 +81,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/merah"
         android:text="Kembali"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="20dp" />
 
