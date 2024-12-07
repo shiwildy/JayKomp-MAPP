@@ -26,7 +26,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private ImageView productImage;
     private TextView productName, productPrice, productDescription;
-    private Button buyButton;
+    private Button buyButton, addCartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class DetailActivity extends AppCompatActivity {
         productPrice = findViewById(R.id.detailPrice);
         productDescription = findViewById(R.id.detailDescription);
         buyButton = findViewById(R.id.buyButton);
+        addCartButton = findViewById(R.id.addcart);
         Product product = (Product) getIntent().getSerializableExtra("product");
 
         if(product != null){
@@ -50,11 +51,20 @@ public class DetailActivity extends AppCompatActivity {
                     .into(productImage);
         }
 
+
         // buy button
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(DetailActivity.this, "Fitur beli tidak tersedia\n\nDikarnakan project ini hanya untuk kebutuhan UAS, jadi tidak diintegrasikan dengan Payment Gateway.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // addCartButton button
+        addCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailActivity.this, "Keranjang belum tersedia.", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -35,16 +35,37 @@ public class PesanActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         berandaButton.setOnClickListener(view -> {
             Intent intent = new Intent(PesanActivity.this, BerandaActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         profilButton.setOnClickListener(view -> {
             Intent intent = new Intent(PesanActivity.this, ProfileActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         cartButton.setOnClickListener(view -> {
             Intent intent = new Intent(PesanActivity.this, CartActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
     }

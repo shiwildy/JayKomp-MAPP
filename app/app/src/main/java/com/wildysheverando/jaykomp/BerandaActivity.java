@@ -75,6 +75,13 @@ public class BerandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BerandaActivity.this, PesanActivity.class);
+
+                // Tangkap nama email dan lempar lagi 🗿
+                String nama = getIntent().getStringExtra("nama");
+                String email = getIntent().getStringExtra("email");
+                intent.putExtra("nama", nama);
+                intent.putExtra("email", email);
+
                 startActivity(intent);
             }
         });
@@ -83,6 +90,13 @@ public class BerandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BerandaActivity.this, CartActivity.class);
+
+                // Tangkap nama email dan lempar lagi 🗿
+                String nama = getIntent().getStringExtra("nama");
+                String email = getIntent().getStringExtra("email");
+                intent.putExtra("nama", nama);
+                intent.putExtra("email", email);
+
                 startActivity(intent);
             }
         });
@@ -91,6 +105,13 @@ public class BerandaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BerandaActivity.this, ProfileActivity.class);
+
+                // Tangkap nama email dan lempar lagi 🗿
+                String nama = getIntent().getStringExtra("nama");
+                String email = getIntent().getStringExtra("email");
+                intent.putExtra("nama", nama);
+                intent.putExtra("email", email);
+
                 startActivity(intent);
             }
         });

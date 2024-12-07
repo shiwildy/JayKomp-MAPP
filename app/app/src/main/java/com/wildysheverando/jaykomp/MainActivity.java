@@ -99,12 +99,14 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
                 if (response.isSuccessful()) {
                     Map<String, String> responseBody = response.body();
-                    if (responseBody != null && responseBody.containsKey("message")) {
-                        String message = responseBody.get("message");
-                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                    if (responseBody != null && responseBody.containsKey("nama")) {
+                        String nama = responseBody.get("nama");
+                        Toast.makeText(MainActivity.this, "Anda telah login sebagai "+nama, Toast.LENGTH_SHORT).show();
 
                         // lempar ke beranda / dashboard
                         Intent intent = new Intent(MainActivity.this, BerandaActivity.class);
+                        intent.putExtra("nama", nama);
+                        intent.putExtra("email", email);
                         startActivity(intent);
                         finish();
                     }

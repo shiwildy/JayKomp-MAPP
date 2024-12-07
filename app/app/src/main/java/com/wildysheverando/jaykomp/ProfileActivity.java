@@ -22,7 +22,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
-    private ImageView profileImageView;
     private TextView profileNameTextView, profileEmailTextView;
     private Button logoutButton;
     private ImageButton berandaButton, pesanButton, cartButton;
@@ -35,6 +34,16 @@ public class ProfileActivity extends AppCompatActivity {
         berandaButton = findViewById(R.id.beranda);
         pesanButton = findViewById(R.id.pesan);
         cartButton = findViewById(R.id.cart);
+        profileNameTextView = findViewById(R.id.nametext);
+        profileEmailTextView = findViewById(R.id.emailtext);
+
+        // tangkap lemparan dari login 🤣
+        String nama = getIntent().getStringExtra("nama");
+        String email = getIntent().getStringExtra("email");
+
+        // Set nama dan email yang dilempar dari login 🗿
+        profileEmailTextView.setText(email);
+        profileNameTextView.setText(nama);
 
         // direct logout button ke function logout
         logoutButton.setOnClickListener(view -> logout());
@@ -45,16 +54,37 @@ public class ProfileActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         berandaButton.setOnClickListener(view -> {
             Intent intent = new Intent(ProfileActivity.this, BerandaActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         pesanButton.setOnClickListener(view -> {
             Intent intent = new Intent(ProfileActivity.this, PesanActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         cartButton.setOnClickListener(view -> {
             Intent intent = new Intent(ProfileActivity.this, CartActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
     }
@@ -64,6 +94,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Lempar balik ke main
         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+
+        // Tangkap nama email dan lempar lagi 🗿
+        String nama = getIntent().getStringExtra("nama");
+        String email = getIntent().getStringExtra("email");
+        intent.putExtra("nama", nama);
+        intent.putExtra("email", email);
+
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

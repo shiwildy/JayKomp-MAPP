@@ -35,16 +35,37 @@ public class CartActivity extends AppCompatActivity {
     private void setupBottomNavigation() {
         berandaButton.setOnClickListener(view -> {
             Intent intent = new Intent(CartActivity.this, BerandaActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         profilButton.setOnClickListener(view -> {
             Intent intent = new Intent(CartActivity.this, ProfileActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
 
         pesanButton.setOnClickListener(view -> {
             Intent intent = new Intent(CartActivity.this, PesanActivity.class);
+
+            // Tangkap nama email dan lempar lagi 🗿
+            String nama = getIntent().getStringExtra("nama");
+            String email = getIntent().getStringExtra("email");
+            intent.putExtra("nama", nama);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
     }

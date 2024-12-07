@@ -30,6 +30,7 @@ import java.util.HashMap;
 
 public class DaftarActivity extends AppCompatActivity {
     private EditText emailEditText;
+    private EditText namaEditText;
     private EditText passwordEditText;
     private Button daftarButton;
     private TextView kembaliTextview;
@@ -40,6 +41,7 @@ public class DaftarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
         emailEditText = findViewById(R.id.email);
+        namaEditText = findViewById(R.id.nama);
         passwordEditText = findViewById(R.id.password);
         daftarButton = findViewById(R.id.daftarbutton);
         kembaliTextview = findViewById(R.id.kembali);
@@ -47,14 +49,18 @@ public class DaftarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = emailEditText.getText().toString().trim();
+                String nama = namaEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
                 if (isValidEmail(email)) {
-                    if (!password.isEmpty()) {
-                        daftar(email, password);
-                    } else {
+                    if (password.isEmpty()) {
                         passwordEditText.setError("Password tidak boleh kosong.");
+                    } else if (nama.isEmpty()) {
+                        namaEditText.setError("Nama tidak boleh kosong.");
                     }
+
+                    // Lempar ke function daftar
+                    daftar(nama, email, password);
                 } else {
                     emailEditText.setError("Mohon gunakan email yang valid.");
                 }
@@ -74,8 +80,9 @@ public class DaftarActivity extends AppCompatActivity {
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private void daftar(String email, String password) {
+    private void daftar(String nama, String email, String password) {
         Map<String, String> credentials = new HashMap<>();
+        credentials.put("nama", nama);
         credentials.put("email", email);
         credentials.put("password", password);
 
@@ -88,11 +95,16 @@ public class DaftarActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Map<String, String> responseBody = response.body();
                     if (responseBody != null && responseBody.containsKey("message")) {
-                        String message = responseBody.get("message");
-                        Toast.makeText(DaftarActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DaftarActivity.this, "Akun telah berhasil terdaftar.", Toast.LENGTH_SHORT).show();
+
+                        // lempar ke beranda / dashboard
+                        Intent intent = new Intent(DaftarActivity.this, BerandaActivity.class);
+                        intent.putExtra("nama", nama);
+                        intent.putExtra("email", email);
+                        startActivity(intent);
                     }
                 } else {
-                    Toast.makeText(DaftarActivity.this, "Akun telah terdaftar.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DaftarActivity.this, "Akun telah terdaftar, Silakan login.", Toast.LENGTH_SHORT).show();
                 }
             }
 

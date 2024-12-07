@@ -10,79 +10,90 @@
     tools:context=".DaftarActivity">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginTop="-50dp"
         android:background="@drawable/custom_edittext"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
         <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="290dp"
-            android:layout_gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="18dp">
+                android:layout_width="300dp"
+                android:layout_height="360dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="18dp">
 
             <TextView
-                android:id="@+id/daftartexxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Daftar Akun"
-                android:textColor="@color/hitam"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                    android:id="@+id/daftartexxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar Akun"
+                    android:textColor="@color/hitam"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:drawablePadding="8dp"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:textColor="@color/hitam"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                    android:id="@+id/nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/custom_edittext"
+                    android:drawableLeft="@drawable/baseline_person_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Nama Lengkap"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:textColor="@color/hitam"
+                    android:textColorHighlight="@color/cardview_dark_background"/>
 
             <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_person_24"
-                android:drawablePadding="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="10dp"
-                android:textColor="@color/hitam"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/custom_edittext"
+                    android:drawableLeft="@drawable/baseline_mail_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:textColor="@color/hitam"
+                    android:textColorHighlight="@color/cardview_dark_background"/>
+
+            <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/custom_edittext"
+                    android:drawableLeft="@drawable/baseline_password_24"
+                    android:drawablePadding="8dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="@color/hitam"
+                    android:textColorHighlight="@color/cardview_dark_background"/>
 
             <Button
-                android:id="@+id/daftarbutton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/merah"
-                android:text="Daftar"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                    android:id="@+id/daftarbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded"
+                    android:text="Daftar"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/kembali"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/merah"
-        android:text="Kembali"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:cornerRadius="20dp" />
-
+            android:id="@+id/kembali"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded"
+            android:text="Kembali"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
 </LinearLayout>

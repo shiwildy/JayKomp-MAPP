@@ -41,7 +41,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableLeft="@drawable/baseline_mail_24"
                 android:drawablePadding="8dp"
                 android:hint="Email"
                 android:padding="10dp"
@@ -51,24 +51,22 @@
             <Button
                 android:id="@+id/submitbutton"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/merah"
+                android:background="@drawable/rounded"
                 android:textColor="@color/white"
                 android:text="Submit"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                android:textSize="18sp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/kembali"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/merah"
+        android:background="@drawable/rounded"
         android:textColor="@color/white"
         android:text="Kembali"
-        android:textSize="18sp"
-        app:cornerRadius="20dp" />
+        android:textSize="18sp"/>
 </LinearLayout>
