@@ -11,7 +11,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Koneksi ke Database MySQL
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -19,7 +18,6 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME,
 });
 
-// Cek koneksi MySQL
 db.connect((err) => {
     if (err) {
         console.error('Database connection failed: ', err);
