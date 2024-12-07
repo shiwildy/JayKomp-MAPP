@@ -81,8 +81,9 @@ public class ForgetActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Map<String, String> responseBody = response.body();
                     if (responseBody != null && responseBody.containsKey("message")) {
-                        String message = responseBody.get("message");
-                        Toast.makeText(ForgetActivity.this, message, Toast.LENGTH_SHORT).show();
+//                        String message = responseBody.get("message");
+//                        Toast.makeText(ForgetActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ForgetActivity.this, "Email reset password telah dikirim.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(ForgetActivity.this, "Gagal kirim email reset password.", Toast.LENGTH_SHORT).show();
